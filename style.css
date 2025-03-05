@@ -61,16 +61,19 @@ header {
   top: 0;
   min-height: 75px;
   padding: 0px 20px;
+  padding-top: 32px;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  justify-content: space-between;
+  align-items: start;
   background-color: #eee;
   z-index: 9999;
+  width: 100%;
 }
 
 
 .logo {
   width: 60vw;
+  padding-top: 8px;
 }
 
 .logo > img {
@@ -89,11 +92,41 @@ nav {
   font-size: 14px;
 }
 
-nav > ul {
+.desktop-menu ul {
   width: 35vw;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.desktop-menu {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20px;
+}
+
+.hamburger-toggle {
+  display: none;
+}
+
+.hamburger {
+  display: none;
+  cursor: pointer;
+  margin-left: auto;
+}
+
+.hamburger img {
+  width: 48px;
+  height: auto;
+  padding: 8px;
+  padding-right: 16px;
+}
+
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
 }
 
 #hero {
@@ -249,4 +282,40 @@ footer > span {
   justify-content: flex-end;
   font-size: 14px;
   color: #444;
+}
+
+@media (max-width: 768px) {
+  ul {
+      display: none;
+  }
+
+  .hamburger {
+      display: block;
+  }
+
+  .hamburger-toggle:checked + .hamburger + .mobile-menu {
+      display: flex; /* Muestra el menú móvil cuando el checkbox está marcado */
+  }
+
+  .mobile-menu-burger {
+      display: flex;
+      flex-direction: column;
+  }
+
+  .desktop-menu {
+      display: none;
+      justify-content: space-between;
+      margin: 0;
+  }
+
+  .mobile-menu a {
+    text-align: right;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .mobile-menu {
+      display: none;
+  }
 }
