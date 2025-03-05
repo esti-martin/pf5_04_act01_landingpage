@@ -208,16 +208,20 @@ nav {
 }
 
 #pricing {
-  margin-top: 60px;
+  margin-top: auto;
   display: flex;
+  flex-wrap: wrap;
   gap: 20px;
   text-align: center;
+  justify-content: center;
+  padding: 48px;
+  width: 100%;
 }
 
 .product {
   display: flex;
   flex-direction: column;
-  width: calc(100% / 3);
+  width: 220px;
   border:#000 1px solid;
 }
 
